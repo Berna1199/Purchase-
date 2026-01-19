@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aviator</title>
+
+  <!-- META PIXEL -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '1563029811501143');
+    fbq('track', 'PageView');
+    fbq('track', 'ViewContent');
+
+    // PURCHASE AO CARREGAR A PÁGINA
+    window.addEventListener('load', function () {
+      fbq('track', 'Purchase', {
+        value: 97.00,
+        currency: 'MZN'
+      });
+    });
+  </script>
+
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1563029811501143&ev=PageView&noscript=1"/>
+  </noscript>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .box {
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    h1 {
+      color: #ff3333;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 25px;
+      font-size: 16px;
+    }
+
+    button {
+      background: #00c853;
+      color: #000;
+      border: none;
+      padding: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      width: 100%;
+      cursor: pointer;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    button:hover {
+      background: #00e676;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>Aviator</h1>
+    <p>Clique no botão abaixo para confirmar.</p>
+
+    <button onclick="comprar()">Confirmar Compra</button>
+  </div>
+
+  <script>
+    function comprar() {
+      // DISPARA PURCHASE NO PIXEL
+      fbq('track', 'Purchase', {
+        value: 97.00,
+        currency: 'MZN'
+      });
+
+      // REDIRECIONA PARA O LINK DO CHECKOUT
+      window.location.href = 'http://..';
+    }
+  </script>
+
+</body>
+</html>
